@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>视频播放</title>
+    <style>
+      body {
+        font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #0fb264;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.2s;
+      }
+
+      .back-button:hover {
+        background-color: #0a9e55;
+      }
+
+      .back-to-main {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #3f51b5;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.2s;
+      }
+      
+      .back-to-main:hover {
+        background-color: #303f9f;
+      }
+
+      .video-container {
+        width: 100%;
+        background-color: #000;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      video {
+        width: 100%;
+        display: block;
+      }
+
+      .video-info {
+        margin-top: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .video-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .video-meta {
+        display: flex;
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .video-meta div {
+        margin-right: 20px;
+      }
+
+      .video-description {
+        line-height: 1.6;
+        color: #444;
+      }
+
+      .related-videos {
+        margin-top: 30px;
+      }
+
+      .related-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .exercises-link {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .exercises-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0066cc;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.2s;
+      }
+
+      .exercises-button:hover {
+        background-color: #0055aa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="{{ url_for('recommend.index') }}" class="back-button">
+          <span style="margin-right: 5px">←</span> 返回课程列表
+        </a>
+        
+        <!-- 添加返回主系统的按钮 -->
+        <a href="http://mottoyoung.xyz/main/home" class="back-to-main">
+          返回主系统
+        </a>
+      </div>
+
+      <div class="video-container">
+        <video controls autoplay>
+          <source src="{{ video_url }}" type="video/mp4" />
+          您的浏览器不支持 HTML5 视频播放。
+        </video>
+      </div>
+
+      <div class="video-info">
+        <div class="video-title">
+          {{
+          course_name+"----"+chapter_title+section_title+video_title|default('课程视频')
+          }}
+        </div>
+        <div class="video-meta">
+          <div>学校: {{ video_school|default('未知学校') }}</div>
+          <div>教师: {{ video_teacher|default('未知教师') }}</div>
+          <div>ID: {{ ccid }}</div>
+        </div>
+        <div class="video-description">
+          {{
+          video_about|default('这是一段课程视频，包含了丰富的教学内容。通过观看本视频，您可以学习到相关知识点和实践技能。')
+          }}
+        </div>
+      </div>
+
+      <div class="exercises-link">
+        <a href="{{ url_for('recommend.exercises') }}" class="exercises-button">
+          查看相关习题
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

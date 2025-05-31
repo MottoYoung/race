@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>资源推荐系统</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        background: #f5f7fa; /* 浅色背景 */
+        color: #333;
+      }
+
+      .particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(
+          135deg,
+          #f5f7fa 0%,
+          #e4edf5 100%
+        ); /* 浅色渐变背景 */
+      }
+
+      .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 500px;
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.9); /* 更浅的背景 */
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      .login-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 7px;
+        background: linear-gradient(90deg, #0fb264, #36c8b9);
+      }
+
+      .login-container::after {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(79, 172, 254, 0.08) 0%,
+          rgba(0, 242, 254, 0) 70%
+        );
+        top: -50%;
+        left: -50%;
+        z-index: -1;
+        animation: pulse 10s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
+
+      .logo {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        position: relative;
+      }
+
+      .logo h2 {
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 2.5rem;
+        margin: 0;
+        letter-spacing: 1px;
+        text-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo h2::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #0fb264, #36c8b9);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .login-title {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        color: #5a6a7e;
+        font-size: 1.1rem;
+        font-weight: 400;
+        position: relative;
+      }
+
+      .form-group {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #2c3e50;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      .form-control {
+        height: 55px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        color: #333;
+        transition: all 0.3s;
+        width: 100%;
+      }
+
+      .form-control:focus {
+        border-color: #0fb264;
+        box-shadow: 0 0 0 3px rgba(15, 178, 100, 0.15);
+        background: #fff;
+        outline: none;
+      }
+
+      .form-control::placeholder {
+        color: #90a4ae;
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, #0fb264, #36c8b9);
+        border: none;
+        border-radius: 10px;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(15, 178, 100, 0.2);
+        transition: all 0.4s;
+        width: 100%;
+        margin-top: 1.5rem;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #36c8b9, #0fb264);
+        transition: all 0.4s;
+        z-index: -1;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(15, 178, 100, 0.3);
+      }
+
+      .btn-primary:hover::before {
+        width: 100%;
+      }
+
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+
+      .alert-danger {
+        background-color: rgba(220, 53, 69, 0.1);
+        border-left: 4px solid #dc3545;
+        border-radius: 5px;
+        padding: 15px;
+        color: #dc3545;
+        font-size: 0.9rem;
+        margin: 1.5rem 0;
+      }
+
+      .text-muted {
+        color: #6c757d !important;
+      }
+
+      .floating-shapes div {
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .shape1 {
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(
+          circle,
+          rgba(15, 178, 100, 0.08) 0%,
+          rgba(15, 178, 100, 0) 70%
+        );
+        top: 10%;
+        left: 10%;
+        animation: float 15s ease-in-out infinite;
+      }
+
+      .shape2 {
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(
+          circle,
+          rgba(79, 172, 254, 0.08) 0%,
+          rgba(79, 172, 254, 0) 70%
+        );
+        top: 60%;
+        left: 80%;
+        animation: float 20s ease-in-out infinite alternate;
+      }
+
+      .shape3 {
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(
+          circle,
+          rgba(54, 200, 185, 0.08) 0%,
+          rgba(54, 200, 185, 0) 70%
+        );
+        top: 40%;
+        left: 5%;
+        animation: float 12s ease-in-out infinite 2s alternate;
+      }
+
+      .shape4 {
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(
+          circle,
+          rgba(15, 178, 100, 0.06) 0%,
+          rgba(15, 178, 100, 0) 70%
+        );
+        top: 70%;
+        left: 30%;
+        animation: float 18s ease-in-out infinite 1s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(10px, 15px) rotate(5deg);
+        }
+        50% {
+          transform: translate(5px, -10px) rotate(10deg);
+        }
+        75% {
+          transform: translate(-10px, 15px) rotate(5deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+      }
+
+      .glow {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(15, 178, 100, 0.05) 0%,
+          rgba(15, 178, 100, 0) 70%
+        );
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(80px);
+        z-index: -2;
+        animation: glow 8s infinite alternate;
+      }
+
+      @keyframes glow {
+        0% {
+          opacity: 0.2;
+        }
+        100% {
+          opacity: 0.4;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .login-container {
+          padding: 2rem;
+          width: 95%;
+        }
+
+        .logo h2 {
+          font-size: 2rem;
+        }
+      }
+
+      .return-link-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .return-link {
+        color: #0fb264;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+      .return-link:hover {
+        color: #0a9e55;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 背景粒子效果元素 -->
+    <div id="particles-js" class="particles-js"></div>
+
+    <!-- 霓虹光效 -->
+    <div class="glow"></div>
+
+    <!-- 流星效果 -->
+    <div class="shooting-star star1"></div>
+    <div class="shooting-star star2"></div>
+    <div class="shooting-star star3"></div>
+
+    <!-- 浮动形状 -->
+    <div class="floating-shapes">
+      <div class="shape1"></div>
+      <div class="shape2"></div>
+      <div class="shape3"></div>
+      <div class="shape4"></div>
+    </div>
+
+    <div class="login-container">
+      <div class="logo">
+        <h2>智慧学习平台</h2>
+      </div>
+
+      <h4 class="login-title">欢迎使用个性化学习推荐系统</h4>
+      
+      <!-- 添加返回主系统的链接 -->
+      <div class="return-link-container">
+        <a href="http://mottoyoung.xyz/main/home" class="return-link">← 返回主系统</a>
+      </div>
+
+      <form action="{{ url_for('recommend.login') }}" method="post">
+        <div class="form-group">
+          <label for="studentName">请输入学生姓名</label>
+          <input
+            type="text"
+            class="form-control"
+            id="studentName"
+            name="studentName"
+            required
+            placeholder="输入学生姓名以开始推荐"
+            autofocus
+          />
+        </div>
+
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">开始推荐</button>
+      </form>
+
+      <div class="mt-4 text-center">
+        <small class="text-muted"
+          >系统将根据您的学习情况提供个性化学习内容和习题推荐</small
+        >
+      </div>
+    </div>
+
+    <script src="{{ url_for('recommend.static', filename='js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('recommend.static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- 粒子效果JS库 -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 初始化粒子效果 - 使用更淡的颜色
+        particlesJS("particles-js", {
+          particles: {
+            number: {
+              value: 70,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            color: {
+              value: "#0fb264",
+            },
+            shape: {
+              type: "circle",
+              stroke: {
+                width: 0,
+                color: "#000000",
+              },
+              polygon: {
+                nb_sides: 5,
+              },
+            },
+            opacity: {
+              value: 0.2,
+              random: false,
+              anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false,
+              },
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false,
+              },
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: "#0fb264",
+              opacity: 0.2,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200,
+              },
+            },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "grab",
+              },
+              onclick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 140,
+                line_linked: {
+                  opacity: 0.6,
+                },
+              },
+              bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+              push: {
+                particles_nb: 4,
+              },
+              remove: {
+                particles_nb: 2,
+              },
+            },
+          },
+          retina_detect: true,
+        });
+      });
+    </script>
+  </body>
+</html>

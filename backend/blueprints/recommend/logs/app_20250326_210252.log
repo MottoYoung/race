@@ -1,0 +1,1047 @@
+2025-03-26 21:02:52,323 - WARNING -  * Debugger is active!
+2025-03-26 21:02:52,342 - INFO -  * Debugger PIN: 902-179-206
+2025-03-26 21:03:03,829 - INFO - 127.0.0.1 - - [26/Mar/2025 21:03:03] "[33mGET /clean_cache HTTP/1.1[0m" 404 -
+2025-03-26 21:03:11,639 - INFO - 127.0.0.1 - - [26/Mar/2025 21:03:11] "GET /clear_cache HTTP/1.1" 200 -
+2025-03-26 21:03:41,050 - INFO - 127.0.0.1 - - [26/Mar/2025 21:03:41] "GET /ffmpeg_test HTTP/1.1" 200 -
+2025-03-26 21:04:40,071 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:40] "GET /test_all_methods/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:04:40,140 - INFO - 请求视频 1F41944E0E901D6D9C33DC5901307461 的缩略图
+2025-03-26 21:04:40,140 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:04:40,154 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:04:40,154 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:04:40,262 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:04:40,263 - INFO - 开始为视频 1F41944E0E901D6D9C33DC5901307461 生成缩略图
+2025-03-26 21:04:40,272 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:04:40,342 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:04:40,415 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/1F41944E0E901D6D9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:04:40,417 - INFO - API响应: {'msg': '', 'data': {'duration': 1554, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994283-0-0-c3896cf1f13153a95a81403954da9552'], 'quality10': ['https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-10.mp4?auth_key=1742994283-0-0-ff61166fc4efc4a640a747c05500fd82'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:04:40,418 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994283-0-0-c3896cf1f13153a95a81403954da9552
+2025-03-26 21:04:40,419 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmptrgp2ced.jpg
+2025-03-26 21:04:40,419 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:04:40,420 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994283-0-0-c3896cf1f13153a95a81403954da9552 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmptrgp2ced.jpg
+2025-03-26 21:04:40,449 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/1F41944E0E901D6D9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:04:40,457 - DEBUG - Starting new HTTPS connection (1): ali-cdn.xuetangx.com:443
+2025-03-26 21:04:40,482 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:04:40,556 - DEBUG - https://ali-cdn.xuetangx.com:443 "GET /94067a9c6b4d2de2-20.mp4?auth_key=1742994283-0-0-c3896cf1f13153a95a81403954da9552 HTTP/1.1" 200 132348223
+2025-03-26 21:04:40,696 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/1F41944E0E901D6D9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:04:41,080 - DEBUG - Starting new HTTPS connection (1): ali-cdn.xuetangx.com:443
+2025-03-26 21:04:41,325 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:41] "[35m[1mGET /direct_thumbnail/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1[0m" 500 -
+2025-03-26 21:04:41,382 - DEBUG - https://ali-cdn.xuetangx.com:443 "GET /94067a9c6b4d2de2-20.mp4?auth_key=1742994283-0-0-c3896cf1f13153a95a81403954da9552 HTTP/1.1" 200 132348223
+2025-03-26 21:04:42,679 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:42] "GET /clear_cache HTTP/1.1" 200 -
+2025-03-26 21:04:43,207 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-26 21:04:43,225 - INFO - FFmpeg返回码: 0
+2025-03-26 21:04:43,226 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994283-0-0-c3896cf1f13153a95a81403954da9552':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:25:54.58, start: 0.000000, bitrate: 681 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 609 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmptrgp2ced.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000020e5ba9f6c0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmptrgp2ced.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000020e5ba9f6c0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000020e5bba8700] video:30KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.03 bitrate=N/A speed=0.105x    
+
+2025-03-26 21:04:43,227 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmptrgp2ced.jpg
+2025-03-26 21:04:43,285 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\1F41944E0E901D6D9C33DC5901307461.jpg
+2025-03-26 21:04:43,293 - INFO - 临时缩略图文件已删除
+2025-03-26 21:04:43,297 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:43] "GET /video_thumbnail/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:04:43,690 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:43] "[35m[1mGET /native_thumbnail/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1[0m" 500 -
+2025-03-26 21:04:44,367 - INFO - 请求视频 1F41944E0E901D6D9C33DC5901307461 的缩略图
+2025-03-26 21:04:44,368 - INFO - 从缓存返回缩略图: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\1F41944E0E901D6D9C33DC5901307461.jpg
+2025-03-26 21:04:44,369 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:44] "GET /video_thumbnail/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:04:44,634 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:04:44,765 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/1F41944E0E901D6D9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:04:44,767 - DEBUG - Starting new HTTPS connection (1): ali-cdn.xuetangx.com:443
+2025-03-26 21:04:44,844 - DEBUG - https://ali-cdn.xuetangx.com:443 "GET /94067a9c6b4d2de2-20.mp4?auth_key=1742994288-0-0-fa85a960a62b6fddf8ef168f1cc3cb57 HTTP/1.1" 200 132348223
+2025-03-26 21:04:45,785 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:45] "[35m[1mGET /native_thumbnail/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1[0m" 500 -
+2025-03-26 21:04:59,057 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:04:59,084 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:04:59,085 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:04:59,197 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:04:59,197 - INFO - 缩略图测试开始 - 日志ID: 20250326210459
+2025-03-26 21:04:59,201 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:04:59,339 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/1F41944E0E901D6D9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:04:59,344 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:59] "GET /thumbnail_test/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:04:59,436 - INFO - 请求视频 1F41944E0E901D6D9C33DC5901307461 的缩略图
+2025-03-26 21:04:59,437 - INFO - 从缓存返回缩略图: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\1F41944E0E901D6D9C33DC5901307461.jpg
+2025-03-26 21:04:59,439 - INFO - 127.0.0.1 - - [26/Mar/2025 21:04:59] "[36mGET /video_thumbnail/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1[0m" 304 -
+2025-03-26 21:05:15,060 - INFO - 127.0.0.1 - - [26/Mar/2025 21:05:15] "GET /clear_cache HTTP/1.1" 200 -
+2025-03-26 21:05:55,324 - INFO - 127.0.0.1 - - [26/Mar/2025 21:05:55] "[33mGET /recommends HTTP/1.1[0m" 404 -
+2025-03-26 21:06:30,496 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:30] "GET /recommendations HTTP/1.1" 200 -
+2025-03-26 21:06:30,587 - INFO - 请求视频 1F41944E0E901D6D9C33DC5901307461 的缩略图
+2025-03-26 21:06:30,589 - INFO - 请求视频 86E074F8CEDA36689C33DC5901307461 的缩略图
+2025-03-26 21:06:30,589 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:30,591 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:30,619 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:30,620 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:30,620 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,620 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,746 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,746 - INFO - 开始为视频 86E074F8CEDA36689C33DC5901307461 生成缩略图
+2025-03-26 21:06:30,749 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:30,770 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,771 - INFO - 开始为视频 1F41944E0E901D6D9C33DC5901307461 生成缩略图
+2025-03-26 21:06:30,773 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:30,798 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-26 21:06:30,810 - INFO - 请求视频 ABF75EC24F69B71B9C33DC5901307461 的缩略图
+2025-03-26 21:06:30,812 - INFO - 请求视频 9C11B06B3DE4B46C9C33DC5901307461 的缩略图
+2025-03-26 21:06:30,813 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:30,814 - INFO - 请求视频 8D6E4BE41E1CA2239C33DC5901307461 的缩略图
+2025-03-26 21:06:30,815 - INFO - 请求视频 4D3CF30E0144ADF89C33DC5901307461 的缩略图
+2025-03-26 21:06:30,815 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:30,815 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:30,816 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:30,843 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:30,843 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,845 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:30,846 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:30,846 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,846 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:30,846 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,847 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,887 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,888 - INFO - 开始为视频 ABF75EC24F69B71B9C33DC5901307461 生成缩略图
+2025-03-26 21:06:30,890 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:30,894 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/86E074F8CEDA36689C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:30,894 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/1F41944E0E901D6D9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:30,895 - INFO - API响应: {'msg': '', 'data': {'duration': 670, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/2a87719c09ac275c-20.mp4?auth_key=1742994394-0-0-8182ec14b30e231676df18bd863daeba'], 'quality10': ['https://ali-cdn.xuetangx.com/2a87719c09ac275c-10.mp4?auth_key=1742994394-0-0-1d3dd385eb78147ba06a7767ece76e8e'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:30,895 - INFO - API响应: {'msg': '', 'data': {'duration': 1554, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994394-0-0-4484d27890dff55342057d4102e536a0'], 'quality10': ['https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-10.mp4?auth_key=1742994394-0-0-d5470038e202eab1dde08fd3dc1b8a74'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:30,896 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,896 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/2a87719c09ac275c-20.mp4?auth_key=1742994394-0-0-8182ec14b30e231676df18bd863daeba
+2025-03-26 21:06:30,896 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994394-0-0-4484d27890dff55342057d4102e536a0
+2025-03-26 21:06:30,896 - INFO - 开始为视频 8D6E4BE41E1CA2239C33DC5901307461 生成缩略图
+2025-03-26 21:06:30,898 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpdw_xjauk.jpg
+2025-03-26 21:06:30,899 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:30,900 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpayj7v5l5.jpg
+2025-03-26 21:06:30,900 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/2a87719c09ac275c-20.mp4?auth_key=1742994394-0-0-8182ec14b30e231676df18bd863daeba -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpdw_xjauk.jpg
+2025-03-26 21:06:30,900 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:30,900 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:30,901 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994394-0-0-4484d27890dff55342057d4102e536a0 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpayj7v5l5.jpg
+2025-03-26 21:06:30,921 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,921 - INFO - 开始为视频 9C11B06B3DE4B46C9C33DC5901307461 生成缩略图
+2025-03-26 21:06:30,925 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:30,927 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:30,927 - INFO - 开始为视频 4D3CF30E0144ADF89C33DC5901307461 生成缩略图
+2025-03-26 21:06:30,929 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:31,021 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/ABF75EC24F69B71B9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:31,023 - INFO - API响应: {'msg': '', 'data': {'duration': 854, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/43c06a454826022b-20.mp4?auth_key=1742994394-0-0-a58648283c896664120131796049af19'], 'quality10': ['https://ali-cdn.xuetangx.com/43c06a454826022b-10.mp4?auth_key=1742994394-0-0-13376a39bbd161a1363f37e8b7bdae45'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:31,023 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/43c06a454826022b-20.mp4?auth_key=1742994394-0-0-a58648283c896664120131796049af19
+2025-03-26 21:06:31,025 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmp8nsioqzb.jpg
+2025-03-26 21:06:31,026 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:31,026 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/43c06a454826022b-20.mp4?auth_key=1742994394-0-0-a58648283c896664120131796049af19 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmp8nsioqzb.jpg
+2025-03-26 21:06:31,031 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/8D6E4BE41E1CA2239C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:31,032 - INFO - API响应: {'msg': '', 'data': {'duration': 794, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/28c74177f814f495-20.mp4?auth_key=1742994394-0-0-3dfa8621495495ceaea55d56996f61fc'], 'quality10': ['https://ali-cdn.xuetangx.com/28c74177f814f495-10.mp4?auth_key=1742994394-0-0-298ab6dbfbeaced975448bf84fca4933'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:31,032 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/28c74177f814f495-20.mp4?auth_key=1742994394-0-0-3dfa8621495495ceaea55d56996f61fc
+2025-03-26 21:06:31,036 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmp6kemidex.jpg
+2025-03-26 21:06:31,037 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:31,039 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/28c74177f814f495-20.mp4?auth_key=1742994394-0-0-3dfa8621495495ceaea55d56996f61fc -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmp6kemidex.jpg
+2025-03-26 21:06:31,052 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/9C11B06B3DE4B46C9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:31,056 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/4D3CF30E0144ADF89C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:31,056 - INFO - API响应: {'msg': '', 'data': {'duration': 2204, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/6a14c73a9e41a260-20.mp4?auth_key=1742994394-0-0-6117d328a9ef5625a14fcbc98c21aab1'], 'quality10': ['https://ali-cdn.xuetangx.com/6a14c73a9e41a260-10.mp4?auth_key=1742994394-0-0-f0f6e8b9f52fe2ba4249c5e9ebbcbd6d'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:31,059 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/6a14c73a9e41a260-20.mp4?auth_key=1742994394-0-0-6117d328a9ef5625a14fcbc98c21aab1
+2025-03-26 21:06:31,060 - INFO - API响应: {'msg': '', 'data': {'duration': 1206, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/b953686750f0eaea-20.mp4?auth_key=1742994394-0-0-9628b9f74ebf056835da59d059e9d96c'], 'quality10': ['https://ali-cdn.xuetangx.com/b953686750f0eaea-10.mp4?auth_key=1742994394-0-0-1dea94904ce06b156a0dbddbd9808e85'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:31,061 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/b953686750f0eaea-20.mp4?auth_key=1742994394-0-0-9628b9f74ebf056835da59d059e9d96c
+2025-03-26 21:06:31,064 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpoly8lgmd.jpg
+2025-03-26 21:06:31,065 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmp01739tbx.jpg
+2025-03-26 21:06:31,065 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:31,067 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:31,068 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/b953686750f0eaea-20.mp4?auth_key=1742994394-0-0-9628b9f74ebf056835da59d059e9d96c -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpoly8lgmd.jpg
+2025-03-26 21:06:31,068 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/6a14c73a9e41a260-20.mp4?auth_key=1742994394-0-0-6117d328a9ef5625a14fcbc98c21aab1 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmp01739tbx.jpg
+2025-03-26 21:06:33,921 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:33,924 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/2a87719c09ac275c-20.mp4?auth_key=1742994394-0-0-8182ec14b30e231676df18bd863daeba':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.20.100
+  Duration: 00:11:10.81, start: 0.000000, bitrate: 1088 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 1018 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : #Mainconcept MP4 Sound Media Handler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpdw_xjauk.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000028f9373ad80] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpdw_xjauk.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000028f9373ad80] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000028f937d9080] video:73KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.5 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.019x    
+
+2025-03-26 21:06:33,926 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpdw_xjauk.jpg
+2025-03-26 21:06:33,954 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\86E074F8CEDA36689C33DC5901307461.jpg
+2025-03-26 21:06:33,962 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:33,966 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:33] "GET /video_thumbnail/86E074F8CEDA36689C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:33,975 - INFO - 请求视频 12C70F5F46198BD49C33DC5901307461 的缩略图
+2025-03-26 21:06:33,978 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:34,029 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:34,030 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:34,103 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:34,104 - INFO - 开始为视频 12C70F5F46198BD49C33DC5901307461 生成缩略图
+2025-03-26 21:06:34,109 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:34,844 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:34,847 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/43c06a454826022b-20.mp4?auth_key=1742994394-0-0-a58648283c896664120131796049af19':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf55.12.100
+  Duration: 00:14:14.21, start: 0.000000, bitrate: 506 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 437 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 63 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmp8nsioqzb.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 00000122ad346ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmp8nsioqzb.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 00000122ad346ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 00000122ad3e84c0] video:86KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.5 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0201x    
+
+2025-03-26 21:06:34,850 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmp8nsioqzb.jpg
+2025-03-26 21:06:34,870 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/12C70F5F46198BD49C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:34,874 - INFO - API响应: {'msg': '', 'data': {'duration': 241, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/569f6cd34dd47555-20.mp4?auth_key=1742994397-0-0-f663c6186243dfe8783420104b25b7da'], 'quality10': ['https://ali-cdn.xuetangx.com/569f6cd34dd47555-10.mp4?auth_key=1742994397-0-0-6100987ca0e15e3320603ef7e1719b6c'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:34,876 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/569f6cd34dd47555-20.mp4?auth_key=1742994397-0-0-f663c6186243dfe8783420104b25b7da
+2025-03-26 21:06:34,883 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpk77894io.jpg
+2025-03-26 21:06:34,885 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:34,887 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/569f6cd34dd47555-20.mp4?auth_key=1742994397-0-0-f663c6186243dfe8783420104b25b7da -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpk77894io.jpg
+2025-03-26 21:06:34,901 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\ABF75EC24F69B71B9C33DC5901307461.jpg
+2025-03-26 21:06:34,918 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:34,923 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:34] "GET /video_thumbnail/ABF75EC24F69B71B9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:34,933 - INFO - 请求视频 055D11F970BE90939C33DC5901307461 的缩略图
+2025-03-26 21:06:34,935 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:34,958 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:34,958 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:35,000 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:35,001 - INFO - 开始为视频 055D11F970BE90939C33DC5901307461 生成缩略图
+2025-03-26 21:06:35,004 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:35,317 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:35,319 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/94067a9c6b4d2de2-20.mp4?auth_key=1742994394-0-0-4484d27890dff55342057d4102e536a0':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:25:54.58, start: 0.000000, bitrate: 681 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 609 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpayj7v5l5.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000017f8b92ad80] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpayj7v5l5.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000017f8b92ad80] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000017f8b9c8f80] video:30KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.5 q=2.0 Lsize=N/A time=00:00:00.03 bitrate=N/A speed=0.017x    
+
+2025-03-26 21:06:35,321 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpayj7v5l5.jpg
+2025-03-26 21:06:35,345 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\1F41944E0E901D6D9C33DC5901307461.jpg
+2025-03-26 21:06:35,352 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:35,356 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:35] "GET /video_thumbnail/1F41944E0E901D6D9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:35,375 - INFO - 请求视频 C9CB725AB50CA5839C33DC5901307461 的缩略图
+2025-03-26 21:06:35,377 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:35,411 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:35,411 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:35,477 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:35,478 - INFO - 开始为视频 C9CB725AB50CA5839C33DC5901307461 生成缩略图
+2025-03-26 21:06:35,485 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:35,739 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:35,741 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/b953686750f0eaea-20.mp4?auth_key=1742994394-0-0-9628b9f74ebf056835da59d059e9d96c':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:20:06.76, start: 0.000000, bitrate: 1093 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], 1023 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpoly8lgmd.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 000002321e896ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpoly8lgmd.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000002321e896ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000002321e9396c0] video:90KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.5 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0189x    
+
+2025-03-26 21:06:35,743 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpoly8lgmd.jpg
+2025-03-26 21:06:35,784 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\4D3CF30E0144ADF89C33DC5901307461.jpg
+2025-03-26 21:06:35,794 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:35,800 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:35] "GET /video_thumbnail/4D3CF30E0144ADF89C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:35,822 - INFO - 请求视频 A0369821C475A97A9C33DC5901307461 的缩略图
+2025-03-26 21:06:35,825 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:35,846 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/055D11F970BE90939C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:35,849 - INFO - API响应: {'msg': '', 'data': {'duration': 436, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/fa0e2a365849189a-20.mp4?auth_key=1742994398-0-0-cfc915450e4d00e4ea9c19bec870b981'], 'quality10': ['https://ali-cdn.xuetangx.com/fa0e2a365849189a-10.mp4?auth_key=1742994398-0-0-a0a30697369a35b4c82c5d988f4e1f7b'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:35,851 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/fa0e2a365849189a-20.mp4?auth_key=1742994398-0-0-cfc915450e4d00e4ea9c19bec870b981
+2025-03-26 21:06:35,856 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpft_lucj6.jpg
+2025-03-26 21:06:35,857 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:35,862 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/fa0e2a365849189a-20.mp4?auth_key=1742994398-0-0-cfc915450e4d00e4ea9c19bec870b981 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpft_lucj6.jpg
+2025-03-26 21:06:35,900 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:35,900 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:35,956 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:35,957 - INFO - 开始为视频 A0369821C475A97A9C33DC5901307461 生成缩略图
+2025-03-26 21:06:35,959 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:36,423 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/C9CB725AB50CA5839C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:36,430 - INFO - API响应: {'msg': '', 'data': {'duration': 73, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/0b12ba3a335ef1ab-20.mp4?auth_key=1742994399-0-0-ebb8591ed12d3ecd05b62bf2a84101f6'], 'quality10': ['https://ali-cdn.xuetangx.com/0b12ba3a335ef1ab-10.mp4?auth_key=1742994399-0-0-9044cd913f931fb57996b2b2c97376f4'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:36,431 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/0b12ba3a335ef1ab-20.mp4?auth_key=1742994399-0-0-ebb8591ed12d3ecd05b62bf2a84101f6
+2025-03-26 21:06:36,434 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmp_ykj7_h7.jpg
+2025-03-26 21:06:36,436 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:36,437 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/0b12ba3a335ef1ab-20.mp4?auth_key=1742994399-0-0-ebb8591ed12d3ecd05b62bf2a84101f6 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmp_ykj7_h7.jpg
+2025-03-26 21:06:36,669 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:36,672 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/28c74177f814f495-20.mp4?auth_key=1742994394-0-0-3dfa8621495495ceaea55d56996f61fc':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:13:14.48, start: 0.000000, bitrate: 1094 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 1024 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmp6kemidex.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000029ae7896ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmp6kemidex.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000029ae7896ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000029ae79393c0] video:123KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.4 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0177x    
+
+2025-03-26 21:06:36,675 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmp6kemidex.jpg
+2025-03-26 21:06:36,706 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\8D6E4BE41E1CA2239C33DC5901307461.jpg
+2025-03-26 21:06:36,712 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:36,716 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:36] "GET /video_thumbnail/8D6E4BE41E1CA2239C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:36,732 - INFO - 请求视频 E670437D2EF414A59C33DC5901307461 的缩略图
+2025-03-26 21:06:36,734 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:36,764 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:36,764 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:36,839 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:36,840 - INFO - 开始为视频 E670437D2EF414A59C33DC5901307461 生成缩略图
+2025-03-26 21:06:36,842 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:37,073 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/A0369821C475A97A9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:37,076 - INFO - API响应: {'msg': '', 'data': {'duration': 351, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/9da88edb1efc8d4e-20.mp4?auth_key=1742994399-0-0-71fbb2f2eb29435b09eea1545cf186bd'], 'quality10': ['https://ali-cdn.xuetangx.com/9da88edb1efc8d4e-10.mp4?auth_key=1742994399-0-0-c81435f230414fca6edb338bcf815e58'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:37,077 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/9da88edb1efc8d4e-20.mp4?auth_key=1742994399-0-0-71fbb2f2eb29435b09eea1545cf186bd
+2025-03-26 21:06:37,078 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpvhyugigs.jpg
+2025-03-26 21:06:37,079 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:37,079 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/9da88edb1efc8d4e-20.mp4?auth_key=1742994399-0-0-71fbb2f2eb29435b09eea1545cf186bd -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpvhyugigs.jpg
+2025-03-26 21:06:37,300 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/E670437D2EF414A59C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:37,302 - INFO - API响应: {'msg': '', 'data': {'duration': 194, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/a7397cf013e281db-20.mp4?auth_key=1742994400-0-0-d6c74575874f321c46b5ae51789e2e48'], 'quality10': ['https://ali-cdn.xuetangx.com/a7397cf013e281db-10.mp4?auth_key=1742994400-0-0-6583476f893986f199525fa65cc90942'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:37,302 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/a7397cf013e281db-20.mp4?auth_key=1742994400-0-0-d6c74575874f321c46b5ae51789e2e48
+2025-03-26 21:06:37,303 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmp88zb5lze.jpg
+2025-03-26 21:06:37,303 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:37,304 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/a7397cf013e281db-20.mp4?auth_key=1742994400-0-0-d6c74575874f321c46b5ae51789e2e48 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmp88zb5lze.jpg
+2025-03-26 21:06:37,947 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:37,948 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/6a14c73a9e41a260-20.mp4?auth_key=1742994394-0-0-6117d328a9ef5625a14fcbc98c21aab1':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:36:44.14, start: 0.000000, bitrate: 1026 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], 886 kb/s, 59 fps, 59 tbr, 15104 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 127 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmp01739tbx.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 59 fps, 59 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000016f2d696ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmp01739tbx.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000016f2d696ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000016f2d738700] video:48KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.7 q=2.0 Lsize=N/A time=00:00:00.01 bitrate=N/A speed=0.0117x    
+
+2025-03-26 21:06:37,949 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmp01739tbx.jpg
+2025-03-26 21:06:37,972 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\9C11B06B3DE4B46C9C33DC5901307461.jpg
+2025-03-26 21:06:37,977 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:37,978 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:37] "GET /video_thumbnail/9C11B06B3DE4B46C9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:37,996 - INFO - 请求视频 E6ECE82C696C233D9C33DC5901307461 的缩略图
+2025-03-26 21:06:37,998 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:38,049 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:38,050 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:38,122 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:38,122 - INFO - 开始为视频 E6ECE82C696C233D9C33DC5901307461 生成缩略图
+2025-03-26 21:06:38,127 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:38,408 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:38,411 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/0b12ba3a335ef1ab-20.mp4?auth_key=1742994399-0-0-ebb8591ed12d3ecd05b62bf2a84101f6':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf55.12.100
+  Duration: 00:01:13.07, start: 0.000000, bitrate: 320 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], 258 kb/s, 29 fps, 29 tbr, 14848 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 54 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmp_ykj7_h7.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 29 fps, 29 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 00000263e2ab6ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmp_ykj7_h7.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 00000263e2ab6ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 00000263e2b59d40] video:22KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=1.0 q=2.0 Lsize=N/A time=00:00:00.03 bitrate=N/A speed=0.0341x    
+
+2025-03-26 21:06:38,414 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmp_ykj7_h7.jpg
+2025-03-26 21:06:38,439 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\C9CB725AB50CA5839C33DC5901307461.jpg
+2025-03-26 21:06:38,445 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:38,448 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:38] "GET /video_thumbnail/C9CB725AB50CA5839C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:38,460 - INFO - 请求视频 9EEEE35E09222CED9C33DC5901307461 的缩略图
+2025-03-26 21:06:38,463 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:38,497 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:38,499 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:38,560 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/E6ECE82C696C233D9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:38,563 - INFO - API响应: {'msg': '', 'data': {'duration': 899, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/7c8727a1a4325754-20.mp4?auth_key=1742994401-0-0-7afea8118049aa80d79bd57df3b3fd15'], 'quality10': ['https://ali-cdn.xuetangx.com/7c8727a1a4325754-10.mp4?auth_key=1742994401-0-0-02ecb13dbede6cc514918fe2eac69b29'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:38,565 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/7c8727a1a4325754-20.mp4?auth_key=1742994401-0-0-7afea8118049aa80d79bd57df3b3fd15
+2025-03-26 21:06:38,567 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:38,568 - INFO - 开始为视频 9EEEE35E09222CED9C33DC5901307461 生成缩略图
+2025-03-26 21:06:38,570 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpoxki7afl.jpg
+2025-03-26 21:06:38,573 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:38,575 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/7c8727a1a4325754-20.mp4?auth_key=1742994401-0-0-7afea8118049aa80d79bd57df3b3fd15 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpoxki7afl.jpg
+2025-03-26 21:06:38,576 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:38,991 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:38,993 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/fa0e2a365849189a-20.mp4?auth_key=1742994398-0-0-cfc915450e4d00e4ea9c19bec870b981':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:07:16.00, start: 0.000000, bitrate: 1094 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 1024 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpft_lucj6.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000023d128aad80] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpft_lucj6.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000023d128aad80] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000023d12949180] video:41KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.7 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0269x    
+
+2025-03-26 21:06:38,994 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpft_lucj6.jpg
+2025-03-26 21:06:39,014 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\055D11F970BE90939C33DC5901307461.jpg
+2025-03-26 21:06:39,024 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:39,029 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:39] "GET /video_thumbnail/055D11F970BE90939C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:39,046 - INFO - 请求视频 5C573FB68459DAA09C33DC5901307461 的缩略图
+2025-03-26 21:06:39,049 - INFO - 尝试FFmpeg路径: ffmpeg
+2025-03-26 21:06:39,085 - INFO - 路径 ffmpeg 检查失败: [WinError 2] 系统找不到指定的文件。
+2025-03-26 21:06:39,086 - INFO - 尝试FFmpeg路径: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:39,178 - INFO - 找到可用的FFmpeg: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe
+2025-03-26 21:06:39,179 - INFO - 开始为视频 5C573FB68459DAA09C33DC5901307461 生成缩略图
+2025-03-26 21:06:39,186 - DEBUG - Starting new HTTPS connection (1): www.xuetangx.com:443
+2025-03-26 21:06:39,250 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:39,251 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/569f6cd34dd47555-20.mp4?auth_key=1742994397-0-0-f663c6186243dfe8783420104b25b7da':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:04:01.45, start: 0.000000, bitrate: 1093 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 1023 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpk77894io.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 000001f92ccb6ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpk77894io.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000001f92ccb6ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000001f92cd58f80] video:63KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.5 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0206x    
+
+2025-03-26 21:06:39,253 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpk77894io.jpg
+2025-03-26 21:06:39,266 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\12C70F5F46198BD49C33DC5901307461.jpg
+2025-03-26 21:06:39,271 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:39,272 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:39] "GET /video_thumbnail/12C70F5F46198BD49C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:39,299 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/9EEEE35E09222CED9C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:39,300 - INFO - API响应: {'msg': '', 'data': {'duration': 1122, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/96aa07cf290e7f4f-20.mp4?auth_key=1742994402-0-0-8bd40da6193dab5d6d12b911e349cbc9'], 'quality10': ['https://ali-cdn.xuetangx.com/96aa07cf290e7f4f-10.mp4?auth_key=1742994402-0-0-1f1548ec979ff50995533b5d6eee6157'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:39,301 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/96aa07cf290e7f4f-20.mp4?auth_key=1742994402-0-0-8bd40da6193dab5d6d12b911e349cbc9
+2025-03-26 21:06:39,304 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmpr4ljwak3.jpg
+2025-03-26 21:06:39,304 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:39,305 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/96aa07cf290e7f4f-20.mp4?auth_key=1742994402-0-0-8bd40da6193dab5d6d12b911e349cbc9 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmpr4ljwak3.jpg
+2025-03-26 21:06:39,506 - DEBUG - https://www.xuetangx.com:443 "GET /api/v1/lms/service/playurl/5C573FB68459DAA09C33DC5901307461/?appid=10000 HTTP/1.1" 200 None
+2025-03-26 21:06:39,508 - INFO - API响应: {'msg': '', 'data': {'duration': 897, 'sources': {'quality20': ['https://ali-cdn.xuetangx.com/6e01c70b1272bc57-20.mp4?auth_key=1742994402-0-0-9aba295ad643035df5eeffd40389d631'], 'quality10': ['https://ali-cdn.xuetangx.com/6e01c70b1272bc57-10.mp4?auth_key=1742994402-0-0-e44d743b4457d162f148497e0974811e'], 'group': 'ali'}}, 'success': True}
+2025-03-26 21:06:39,509 - INFO - 获取到视频URL: https://ali-cdn.xuetangx.com/6e01c70b1272bc57-20.mp4?auth_key=1742994402-0-0-9aba295ad643035df5eeffd40389d631
+2025-03-26 21:06:39,513 - INFO - 临时缩略图路径: C:\Users\86173\AppData\Local\Temp\tmp8a32gnsa.jpg
+2025-03-26 21:06:39,515 - INFO - 尝试从时间点 30 提取帧
+2025-03-26 21:06:39,516 - INFO - 执行FFmpeg命令: D:\app\daily\FFmpeg\ffmpeg-7.1.1-full_build\bin\ffmpeg.exe -y -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Referer: https://www.xuetangx.com/
+ -ss 30 -i https://ali-cdn.xuetangx.com/6e01c70b1272bc57-20.mp4?auth_key=1742994402-0-0-9aba295ad643035df5eeffd40389d631 -frames:v 1 -q:v 2 C:\Users\86173\AppData\Local\Temp\tmp8a32gnsa.jpg
+2025-03-26 21:06:39,518 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:39,520 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/a7397cf013e281db-20.mp4?auth_key=1742994400-0-0-d6c74575874f321c46b5ae51789e2e48':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:03:13.96, start: 0.000000, bitrate: 1093 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 1023 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmp88zb5lze.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000023717b46ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmp88zb5lze.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000023717b46ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000023717be84c0] video:69KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.9 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.037x    
+
+2025-03-26 21:06:39,523 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmp88zb5lze.jpg
+2025-03-26 21:06:39,556 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\E670437D2EF414A59C33DC5901307461.jpg
+2025-03-26 21:06:39,566 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:39,568 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:39] "GET /video_thumbnail/E670437D2EF414A59C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:39,793 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:39,795 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/9da88edb1efc8d4e-20.mp4?auth_key=1742994399-0-0-71fbb2f2eb29435b09eea1545cf186bd':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:05:50.96, start: 0.000000, bitrate: 1092 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 1022 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpvhyugigs.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 000001963b4a1180] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpvhyugigs.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000001963b4a1180] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000001963b549c40] video:64KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.9 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0368x    
+
+2025-03-26 21:06:39,798 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpvhyugigs.jpg
+2025-03-26 21:06:39,825 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\A0369821C475A97A9C33DC5901307461.jpg
+2025-03-26 21:06:39,836 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:39,844 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:39] "GET /video_thumbnail/A0369821C475A97A9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:42,119 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:42,120 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/7c8727a1a4325754-20.mp4?auth_key=1742994401-0-0-7afea8118049aa80d79bd57df3b3fd15':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf55.12.100
+  Duration: 00:14:59.80, start: 0.000000, bitrate: 796 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 727 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 63 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpoxki7afl.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 000001c89cb36ec0] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpoxki7afl.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000001c89cb36ec0] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000001c89cbd9a00] video:52KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.5 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0208x    
+
+2025-03-26 21:06:42,122 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpoxki7afl.jpg
+2025-03-26 21:06:42,144 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\E6ECE82C696C233D9C33DC5901307461.jpg
+2025-03-26 21:06:42,157 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:42,161 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:42] "GET /video_thumbnail/E6ECE82C696C233D9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:42,648 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:42,649 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/6e01c70b1272bc57-20.mp4?auth_key=1742994402-0-0-9aba295ad643035df5eeffd40389d631':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:14:57.60, start: 0.000000, bitrate: 1095 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 1024 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmp8a32gnsa.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000019cc145ad80] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmp8a32gnsa.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000019cc145ad80] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000019cc14f85c0] video:54KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.9 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0372x    
+
+2025-03-26 21:06:42,653 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmp8a32gnsa.jpg
+2025-03-26 21:06:42,681 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\5C573FB68459DAA09C33DC5901307461.jpg
+2025-03-26 21:06:42,688 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:42,692 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:42] "GET /video_thumbnail/5C573FB68459DAA09C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:06:42,695 - INFO - FFmpeg返回码: 0
+2025-03-26 21:06:42,696 - INFO - FFmpeg错误输出: ffmpeg version 7.1.1-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://ali-cdn.xuetangx.com/96aa07cf290e7f4f-20.mp4?auth_key=1742994402-0-0-8bd40da6193dab5d6d12b911e349cbc9':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.41.100
+  Duration: 00:18:42.16, start: 0.000000, bitrate: 586 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1024x576 [SAR 1:1 DAR 16:9], 516 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\86173\AppData\Local\Temp\tmpr4ljwak3.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1024x576 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 0000014dad1bad80] The specified filename 'C:\Users\86173\AppData\Local\Temp\tmpr4ljwak3.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000014dad1bad80] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000014dad2584c0] video:79KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.0432x    
+
+2025-03-26 21:06:42,699 - INFO - 成功生成缩略图: C:\Users\86173\AppData\Local\Temp\tmpr4ljwak3.jpg
+2025-03-26 21:06:42,724 - INFO - 缩略图已保存到缓存: D:\Desktop\比赛\服务外包+网络技术挑战赛\新建文件夹\recommand\static\thumbnails\9EEEE35E09222CED9C33DC5901307461.jpg
+2025-03-26 21:06:42,735 - INFO - 临时缩略图文件已删除
+2025-03-26 21:06:42,745 - INFO - 127.0.0.1 - - [26/Mar/2025 21:06:42] "GET /video_thumbnail/9EEEE35E09222CED9C33DC5901307461 HTTP/1.1" 200 -
+2025-03-26 21:08:26,014 - INFO -  * Detected change in 'd:\\Desktop\\比赛\\服务外包+网络技术挑战赛\\新建文件夹\\recommand\\video-recommendation-website\\app.py', reloading

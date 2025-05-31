@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .video-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .video-item {
+        margin: 10px;
+        width: 240px;
+        text-align: center;
+      }
+      .video-thumbnail {
+        width: 240px;
+        height: 135px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: transform 0.2s;
+      }
+      .video-thumbnail:hover {
+        transform: scale(1.05);
+      }
+      .video-title {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+
+      /* 视频对话框样式 */
+      .video-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .video-modal-content {
+        background-color: #000;
+        padding: 20px;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 800px;
+        position: relative;
+      }
+
+      .close-button {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background-color: white;
+        color: black;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-weight: bold;
+        border: 2px solid #000;
+      }
+
+      .video-player {
+        width: 100%;
+        aspect-ratio: 16/9;
+        display: block;
+      }
+
+      .video-loading {
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+    <style>
+      /* 添加视频预览容器样式 */
+      .video-preview-container {
+        width: 240px;
+        height: 135px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        background-color: #1a1a1a;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .video-preview-container:hover {
+        transform: scale(1.05);
+      }
+
+      .video-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0; /* 初始隐藏，加载后显示 */
+        transition: opacity 0.5s;
+      }
+
+      .video-preview-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+      }
+
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .play-icon:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 18px solid white;
+        margin-left: 4px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('recommend.static', filename='css/style.css') }}"
+    />
+    <title>推荐视频</title>
+    <script>
+      // 获取视频URL并在对话框中播放
+      async function getVideoUrl(ccid, videoElement) {
+        // 显示加载动画
+        document.getElementById("videoModal").style.display = "flex";
+        document.getElementById("videoLoading").style.display = "block";
+        document.getElementById("videoPlayer").style.display = "none";
+
+        try {
+          // 通过我们的代理服务器获取数据
+          const response = await fetch(`/api/recommend/proxy/video_url/${ccid}`);
+          const data = await response.json();
+
+          if (data.success && data.data && data.data.sources) {
+            // 优先使用高质量视频
+            let videoUrl = "";
+            if (
+              data.data.sources.quality20 &&
+              data.data.sources.quality20.length > 0
+            ) {
+              videoUrl = data.data.sources.quality20[0];
+            } else if (
+              data.data.sources.quality10 &&
+              data.data.sources.quality10.length > 0
+            ) {
+              videoUrl = data.data.sources.quality10[0];
+            }
+
+            if (videoUrl) {
+              // 将视频URL设置到视频播放器
+              const videoPlayer = document.getElementById("videoPlayer");
+              videoPlayer.src = videoUrl;
+              videoPlayer.style.display = "block";
+              document.getElementById("videoLoading").style.display = "none";
+
+              // 尝试自动播放
+              videoPlayer.play().catch((e) => {
+                console.log("自动播放失败，这可能是浏览器策略限制：", e);
+              });
+            } else {
+              document.getElementById("videoLoading").innerText =
+                "无法找到可播放的视频源";
+            }
+          } else {
+            document.getElementById("videoLoading").innerText =
+              "获取视频信息失败";
+          }
+        } catch (error) {
+          console.error("获取视频链接失败:", error);
+          document.getElementById(
+            "videoLoading"
+          ).innerText = `获取视频链接失败: ${error.message}`;
+        }
+      }
+
+      // 关闭视频对话框
+      function closeVideoModal() {
+        const videoModal = document.getElementById("videoModal");
+        const videoPlayer = document.getElementById("videoPlayer");
+
+        // 暂停视频播放
+        videoPlayer.pause();
+        videoPlayer.src = "";
+
+        // 隐藏对话框
+        videoModal.style.display = "none";
+      }
+
+      // 点击对话框外部时关闭
+      window.onclick = function (event) {
+        const videoModal = document.getElementById("videoModal");
+        if (event.target === videoModal) {
+          closeVideoModal();
+        }
+      };
+    </script>
+    <script>
+      // 视频预览功能
+      function initVideoPreview(ccid, container) {
+        // 获取视频URL
+        fetch(`/api/recommend/proxy/video_url/${ccid}`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success && data.data && data.data.sources) {
+              let videoUrl = "";
+              if (
+                data.data.sources.quality20 &&
+                data.data.sources.quality20.length > 0
+              ) {
+                videoUrl = data.data.sources.quality20[0];
+              } else if (
+                data.data.sources.quality10 &&
+                data.data.sources.quality10.length > 0
+              ) {
+                videoUrl = data.data.sources.quality10[0];
+              }
+
+              if (videoUrl) {
+                // 创建视频元素来加载预览
+                const video = container.querySelector("video");
+
+                // 设置视频加载事件处理
+                video.addEventListener("loadeddata", function () {
+                  // 视频加载完成后显示
+                  video.style.opacity = "1";
+                  // 隐藏占位符
+                  const placeholder = container.querySelector(
+                    ".video-preview-placeholder"
+                  );
+                  if (placeholder) placeholder.style.display = "none";
+                });
+
+                video.addEventListener("error", function () {
+                  console.error("视频加载失败");
+                });
+
+                // 设置视频源
+                video.src = videoUrl;
+                // 只加载少量数据以获取预览
+                video.preload = "metadata";
+                // 禁止自动播放
+                video.autoplay = false;
+                // 禁用控件
+                video.controls = false;
+              }
+            }
+          })
+          .catch((error) => {
+            console.error("获取视频预览失败:", error);
+          });
+      }
+
+      // 页面加载完成后初始化所有视频预览
+      document.addEventListener("DOMContentLoaded", function () {
+        const previewContainers = document.querySelectorAll(
+          ".video-preview-container"
+        );
+        previewContainers.forEach((container) => {
+          const ccid = container.getAttribute("data-ccid");
+          // 设置随机背景色作为初始占位符
+          const placeholder = container.querySelector(
+            ".video-preview-placeholder"
+          );
+          placeholder.style.backgroundColor = getRandomColor(ccid);
+
+          // 初始化视频预览 - 取消注释
+          initVideoPreview(ccid, container);
+        });
+      });
+
+      function getRandomColor(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+          hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        let color = "#";
+        for (let i = 0; i < 3; i++) {
+          const value = (hash >> (i * 8)) & 0xff;
+          color += ("00" + value.toString(16)).substr(-2);
+        }
+        return color;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>推荐视频</h1>
+      <div class="video-grid">
+        {% for video_id, ccid in recommended_video_ccids.items() %}
+        <div class="video-item">
+          <div
+            class="video-preview-container"
+            data-ccid="{{ ccid }}"
+            onclick="getVideoUrl('{{ ccid }}', this)"
+          >
+            <!-- 使用后端生成的缩略图 -->
+            <img
+              src="{{ url_for('recommend.video_thumbnail', ccid=ccid) }}"
+              class="video-preview"
+              style="opacity: 1"
+            />
+            <div class="play-icon"></div>
+          </div>
+          <div class="video-title">视频ID: {{ video_id }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- 视频播放对话框 -->
+    <div id="videoModal" class="video-modal">
+      <div class="video-modal-content">
+        <div class="close-button" onclick="closeVideoModal()">×</div>
+        <div id="videoLoading" class="video-loading">正在加载视频...</div>
+        <video id="videoPlayer" class="video-player" controls></video>
+      </div>
+    </div>
+  </body>
+</html>

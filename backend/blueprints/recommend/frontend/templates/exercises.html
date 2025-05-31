@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>习题推荐系统</title>
+    <style>
+      body {
+        font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .title-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+      }
+
+      .main-title {
+        font-size: 24px;
+        color: #333;
+        font-weight: bold;
+        margin-right: 30px;
+      }
+
+      .sub-title {
+        font-size: 16px;
+        color: #0fb264;
+        padding-bottom: 4px;
+        border-bottom: 2px solid #0fb264;
+      }
+
+      .nav-links {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .nav-links a {
+        display: inline-block;
+        color: #0066cc;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #0fb264;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.2s;
+      }
+
+      .back-button:hover {
+        background-color: #0a9e55;
+        text-decoration: none !important;
+      }
+
+      .exercise-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid #0fb264;
+      }
+
+      .exercise-header {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 12px;
+      }
+
+      .exercise-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #333;
+        line-height: 1.4;
+      }
+
+      .exercise-content {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #444;
+      }
+
+      .exercise-options {
+        margin-bottom: 20px;
+        padding-left: 10px;
+      }
+
+      .option-item {
+        margin-bottom: 12px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        position: relative;
+        transition: background-color 0.2s;
+      }
+
+      .option-item:hover {
+        background-color: #f0f0f0;
+      }
+
+      .option-label {
+        font-weight: bold;
+        margin-right: 10px;
+        color: #0fb264;
+        display: inline-block;
+        width: 25px;
+      }
+
+      .exercise-type {
+        display: inline-block;
+        padding: 4px 10px;
+        background-color: #e8f7f1;
+        color: #0fb264;
+        border-radius: 4px;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .exercise-answer {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        border-left: 4px solid #0fb264;
+      }
+
+      .answer-title {
+        font-weight: bold;
+        color: #0fb264;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .answer-content {
+        color: #444;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .toggle-answer {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #f0f9f4;
+        border: 1px solid #c0e6d5;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #0fb264;
+        margin-top: 15px;
+        transition: all 0.3s;
+      }
+
+      .toggle-answer:hover {
+        background-color: #e0f5ea;
+      }
+
+      .user-info-container {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1000;
+      }
+      
+      .user-info {
+        display: flex;
+        align-items: center;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px 10px;
+        border-radius: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .user-info a {
+        margin-left: 10px;
+        color: #0fb264;
+        text-decoration: none;
+      }
+      
+      /* 为标题添加章节标记 */
+      .chapter-tag {
+        display: inline-block;
+        padding: 3px 8px;
+        background-color: #0fb264;
+        color: white;
+        font-size: 12px;
+        border-radius: 3px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+      
+      /* 表格式排列选项 */
+      .options-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      
+      /* 清理HTML标记 */
+      .cleaned-text {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 填空题样式 */
+      .fill-blank-exercise {
+        position: relative;
+        margin-bottom: 15px;
+      }
+      
+      .blank-item {
+        display: inline-block;
+        border-bottom: 1px solid #0fb264;
+        min-width: 100px;
+        text-align: center;
+        padding: 2px 10px;
+        color: #666;
+        font-style: italic;
+        margin: 0 5px;
+      }
+      
+      .blank-label {
+        font-size: 90%;
+        vertical-align: sub;
+        color: #0fb264;
+        margin-right: 2px;
+      }
+      
+      /* 添加数学公式样式 */
+      .math-expr {
+        font-family: "KaTeX_Main", serif;
+        margin-bottom: 8px;
+        display: block;
+      }
+      
+      .answer-item {
+        margin-bottom: 10px;
+        display: flex;
+      }
+      
+      .answer-index {
+        font-weight: bold;
+        color: #0fb264;
+        margin-right: 10px;
+        min-width: 20px;
+      }
+      
+      .answer-value {
+        flex: 1;
+      }
+
+      /* 数学公式容器样式 */
+      .math-formula {
+        padding: 10px 0;
+        overflow-x: auto;
+      }
+      
+      /* 使选项中的数学公式更加突出 */
+      .option-math {
+        font-family: "KaTeX_Main", serif;
+        padding: 2px 0;
+      }
+      
+      /* 防止公式超出容器边界 */
+      .exercise-content {
+        overflow-x: auto;
+        margin-bottom: 20px;
+      }
+    </style>
+    
+    <!-- 添加KaTeX支持 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-section">
+        <div class="main-title">习题推荐</div>
+        <div class="sub-title">巩固你的学习</div>
+        
+        <!-- 添加返回主系统的按钮 -->
+        <div class="return-main-system">
+          <a href="http://mottoyoung.xyz/main/home" class="return-button">返回主系统</a>
+        </div>
+      </div>
+      <!-- 在导航栏或页面顶部添加用户信息显示 -->
+      <div class="user-info-container">
+        {% if student_name %}
+        <div class="user-info">
+          <span>欢迎，{{ student_name }}</span>
+          <a href="{{ url_for('recommend.logout') }}">退出</a>
+        </div>
+        {% else %}
+        <div class="user-info">
+          <a href="{{ url_for('recommend.login_page') }}">登录</a>
+        </div>
+        {% endif %}
+      </div>
+      <div class="nav-links">
+        <a href="{{ url_for('recommend.index') }}" class="back-button">
+          <span style="margin-right: 5px">←</span> 返回课程推荐
+        </a>
+      </div>
+      {% if recommended_exercises %} 
+      {% for exercise in recommended_exercises %}
+      <div class="exercise-card">
+        <div class="exercise-header">
+          <div class="exercise-title">
+            {{ exercise.content|replace('<!--!doctype-->', '')|replace('<br>', ' ')|striptags if not exercise.title else exercise.title }}
+          </div>
+        </div>
+        {% if exercise.content %}
+        <div class="exercise-content">
+          {% if '<!--!doctype-->' in exercise.content %}
+          {% set content = exercise.content.split('<!--!doctype-->')[0]|replace('<br>', '\n')|striptags %}
+          {% else %}
+          {% set content = exercise.content|replace('<br>', '\n')|striptags %}
+          {% endif %}
+          
+          <!-- 检测是否为填空题并格式化显示 -->
+          {% if '（a）[填空' in content or '(a)[填空' in content %}
+          <div class="fill-blank-exercise">
+            {{ content|replace('（a）[填空1]', '<span class="blank-item"><span class="blank-label">a</span></span>')|
+                      replace('（b）[填空2]', '<span class="blank-item"><span class="blank-label">b</span></span>')|
+                      replace('（c）[填空3]', '<span class="blank-item"><span class="blank-label">c</span></span>')|
+                      replace('（d）[填空4]', '<span class="blank-item"><span class="blank-label">d</span></span>')|
+                      replace('(a)[填空1]', '<span class="blank-item"><span class="blank-label">a</span></span>')|
+                      replace('(b)[填空2]', '<span class="blank-item"><span class="blank-label">b</span></span>')|
+                      replace('(c)[填空3]', '<span class="blank-item"><span class="blank-label">c</span></span>')|
+                      replace('(d)[填空4]', '<span class="blank-item"><span class="blank-label">d</span></span>')|safe }}
+          </div>
+          {% else %}
+          <!-- 普通题目内容，可能包含数学表达式 -->
+          <div class="math-content">{{ content }}</div>
+          {% endif %}
+        </div>
+        {% endif %}
+        {% if exercise.option %}
+        {% if exercise.option|length <= 2 %}
+        <div class="exercise-options options-grid">
+        {% else %}
+        <div class="exercise-options">
+        {% endif %}
+          {% for key, value in exercise.option.items() %}
+          <div class="option-item">
+            <span class="option-label">{{ key }}</span>
+            <span class="option-text math-formula">{{ value|replace('<!--!doctype-->', '')|striptags }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <button class="toggle-answer" onclick="toggleAnswer(this)">
+          显示答案
+        </button>
+        <div class="exercise-answer" style="display: none">
+          <div class="answer-title">答案</div>
+          <div class="answer-content">
+            {% if exercise.answer %}
+                {% if '{' in exercise.answer and '}' in exercise.answer %}
+                  {% set answer_dict = exercise.answer|replace('[', '')|replace(']', '')|replace('"', '')|replace("'", '')|trim %}
+                  {% set items = answer_dict.strip('{}').split(',') %}
+                  {% for item in items %}
+                    {% set parts = item.split(':') %}
+                    {% if parts|length > 1 %}
+                      <div class="answer-item">
+                        <span class="answer-index">{{ parts[0].strip() }}</span>
+                        <span class="answer-value">{{ parts[1].strip() }}</span>
+                      </div>
+                    {% else %}
+                      {{ answer_dict }}
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                  {{ exercise.answer|replace('[', '')|replace(']', '')|replace('"', '')|replace("'", '')|striptags }} 
+                {% endif %}
+            {% else %}
+              未提供答案
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %} 
+      {% else %}
+      <div class="exercise-card">
+        <div class="exercise-title">暂无推荐习题</div>
+        <div class="exercise-content">
+          系统正在为您准备个性化习题推荐，请稍后再试。
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- 底部返回按钮 -->
+      <div style="margin-top: 30px; text-align: center; display: flex; gap: 15px; justify-content: center;">
+        <a href="{{ url_for('recommend.index') }}" class="back-button">
+          返回课程推荐页面
+        </a>
+        <a href="http://mottoyoung.xyz/main/home" class="return-button">
+          返回主系统
+        </a>
+      </div>
+    </div>
+
+    <!-- 添加CSS样式 -->
+    <style>
+      .return-main-system {
+        margin-left: auto;
+      }
+      .return-button {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #3f51b5;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.2s;
+      }
+      .return-button:hover {
+        background-color: #303f9f;
+        text-decoration: none !important;
+      }
+    </style>
+
+    <script>
+      function toggleAnswer(button) {
+        const answerDiv = button.nextElementSibling;
+        if (answerDiv.style.display === "none") {
+          answerDiv.style.display = "block";
+          button.textContent = "隐藏答案";
+        } else {
+          answerDiv.style.display = "none";
+          button.textContent = "显示答案";
+        }
+      }
+      
+      // 加载后清理文本中的特殊标记并处理数学公式
+      document.addEventListener('DOMContentLoaded', function() {
+        // 处理数学公式
+        function processMathContent() {
+          try {
+            if (typeof renderMathInElement === 'function') {
+              const mathOptions = {
+                delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false,
+                trust: true,
+                strict: false
+              };
+              
+              
+              // 渲染所有内容区域的数学公式
+              renderMathInElement(document.body, mathOptions);
+              
+              // 特殊处理题目内容
+              const mathContents = document.querySelectorAll('.math-content');
+              mathContents.forEach(function(element) {
+                // 渲染前进行必要的处理，确保公式被正确识别
+                const text = element.innerHTML;
+                
+                // 检查是否有需要特别强调的数学表达式
+                if (text.includes('逆波兰表达式') || text.includes('inverse Polish')) {
+                  // 对包含逆波兰表达式的题目进行特殊处理
+                  element.innerHTML = text.replace(/\$([^$]+)\$/g, '<span class="math-formula">$$$1$$</span>');
+                  renderMathInElement(element, mathOptions);
+                }
+              });
+            }
+          } catch (error) {
+            console.error('Math rendering error:', error);
+          }
+        }
+        
+        // 延迟执行数学公式渲染，确保KaTeX库已完全加载
+        setTimeout(processMathContent, 300);
+        
+        // 优化填空题答案的显示
+        const answerItems = document.querySelectorAll('.answer-item');
+        const blanks = document.querySelectorAll('.blank-item');
+        
+        if (answerItems.length > 0 && blanks.length > 0) {
+          answerItems.forEach(function(item) {
+            const index = item.querySelector('.answer-index').textContent.trim();
+            const value = item.querySelector('.answer-value').textContent.trim();
+            
+            // 根据索引查找对应的填空项并标记
+            for (let i = 0; i < blanks.length; i++) {
+              const label = blanks[i].querySelector('.blank-label').textContent;
+              if (index.includes(label)) {
+                blanks[i].title = value;
+                break;
+              }
+            }
+          });
+        }
+        
+        // 渲染数学公式
+        if (typeof renderMathInElement === 'function') {
+          renderMathInElement(document.body, {
+            delimiters: [
+              {left: "$$", right: "$$", display: true},
+              {left: "$", right: "$", display: false},
+              {left: "\\(", right: "\\)", display: false},
+              {left: "\\[", right: "\\]", display: true}
+            ],
+            throwOnError: false
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
